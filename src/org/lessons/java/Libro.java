@@ -1,65 +1,65 @@
 package org.lessons.java;
 
 public class Libro {
-	
-	private String titolo;
-	private String autore;
-	private String editore;
-	private int pagine;
-	
-	public Libro (String titolo, String autore, String editore, int pagine) {
-		setTitolo(titolo);
-		setAutore(autore);
-		setEditore(editore);
-		setPagine(pagine);
-		
-	}
 
-	public String getTitolo() {
-		return titolo;
-	}
+    private String titolo;
+    private int numeroPagine;
+    private String autore;
+    private String editore;
 
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
+    public Libro(String titolo, int numeroPagine, String autore, String editore) {
 
-	public String getAutore() {
-		return autore;
-	}
+        setTitolo(titolo);
+        setNumeroPagine(numeroPagine);
+        setAutore(autore);
+        setEditore(editore);
+    }
 
-	public void setAutore(String autore) {
-		this.autore = autore;
-	}
+    public String getTitolo() {
+        return titolo;
+    }
 
-	public String getEditore() {
-		return editore;
-	}
+    public void setTitolo(String titolo) {
 
-	public void setEditore(String editore) {
-		this.editore = editore;
-	}
+        this.titolo = titolo;
+    }
 
-	public int getPagine() {
-		return pagine;
-	}
+    public int getNumeroPagine() {
+        return numeroPagine;
+    }
 
-	public void setPagine(int pagine) {
-		this.pagine = pagine;
-	}
+    public void setNumeroPagine(int numeroPagine) {
 
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return "Libro:\n"
-				+ "titolo: " + getTitolo() + "\n"
-				+ "autore: "+ getAutore() + "\n"
-				+ "editore: "+ getEditore() + "\n"
-				+ "numero pagine: "+ getPagine();
-	}
-	
-	
-	
-	
-	
+        this.numeroPagine = numeroPagine;
+    }
 
+    public String getAutore() {
+        return autore;
+    }
+
+    public void setAutore(String autore) {
+
+        this.autore = autore;
+    }
+
+    public String getEditore() {
+        return editore;
+    }
+
+    public void setEditore(String editore) {
+
+        this.editore = editore;
+    }
+
+    @Override
+    public String toString() {
+
+        return "\n------------------------\n"
+                + "Libro\n"
+                + "\nTitolo: " + getTitolo() + "\n"
+                + "Numero pagine: " + getNumeroPagine() + "\n"
+                + "Autore: " + getAutore() + "\n"
+                + "Editore: " + getEditore()
+                + "\n------------------------\n";
+    }
 }
