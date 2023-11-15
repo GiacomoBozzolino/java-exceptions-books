@@ -29,14 +29,19 @@ public class Main {
             System.out.print("Inserisci il nome dell'editore: ");
             String strEditore = in.nextLine();
 
-            Libro b = new Libro(strTitolo, numeroPagine, strAutore, strEditore);
+            Libro b= null;
+			try {
+				b = new Libro(strTitolo, numeroPagine, strAutore, strEditore);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println("\nError in book: " + e.getMessage());
+			}
             books[booksIndex++] = b;
         }
 
         in.close();
 
-        for (int i = 0; i < books.length; i++) {
-            System.out.println(books[i]);
-        }
+       
     }
 }
+

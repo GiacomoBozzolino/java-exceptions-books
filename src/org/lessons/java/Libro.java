@@ -28,10 +28,7 @@ public class Libro {
     }
 
     public int getNumeroPagine()  {
-    
-    		
-    		
-    	
+   
         return numeroPagine;
     }
 

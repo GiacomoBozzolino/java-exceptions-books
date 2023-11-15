@@ -1,0 +1,7 @@
+Libro 1
+
+Titolo: t
+Numero pagine: 10
+Autore: ttt
+Editore: ttttt
+-----------------------------
