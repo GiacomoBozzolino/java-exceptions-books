@@ -7,7 +7,7 @@ public class Libro {
     private String autore;
     private String editore;
 
-    public Libro(String titolo, int numeroPagine, String autore, String editore) {
+    public Libro(String titolo, int numeroPagine, String autore, String editore) throws Exception {
 
         setTitolo(titolo);
         setNumeroPagine(numeroPagine);
@@ -19,16 +19,26 @@ public class Libro {
         return titolo;
     }
 
-    public void setTitolo(String titolo) {
+    public void setTitolo(String titolo) throws Exception {
+    	if (titolo == null || titolo.isEmpty()) {
+    		throw new Exception("il libro deve avere un titolo");
+    	}
 
-        this.titolo = titolo;
+        this.titolo = titolo; 
     }
 
-    public int getNumeroPagine() {
+    public int getNumeroPagine()  {
+    
+    		
+    		
+    	
         return numeroPagine;
     }
 
-    public void setNumeroPagine(int numeroPagine) {
+    public void setNumeroPagine(int numeroPagine)throws Exception {
+    	if(numeroPagine <= 0) {
+    		throw new Exception("il libro non può avere 0 pagine");
+    		}
 
         this.numeroPagine = numeroPagine;
     }
@@ -37,19 +47,29 @@ public class Libro {
         return autore;
     }
 
-    public void setAutore(String autore) {
-
-        this.autore = autore;
-    }
+    public void setAutore(String autore) throws Exception {
+		
+		if (autore == null || autore.isEmpty()) {
+			
+		throw new Exception("il nome dell'autore non può essere vuoto!");
+		}
+		
+		this.autore = autore;
+	}
 
     public String getEditore() {
         return editore;
     }
 
-    public void setEditore(String editore) {
-
-        this.editore = editore;
-    }
+    public void setEditore(String editore) throws Exception {
+		
+	if (editore == null || editore.isEmpty()) {
+			
+			throw new Exception("il nome dell'editore non può essere vuoto!");
+		}
+		
+	this.editore = editore;
+	}
 
     @Override
     public String toString() {
