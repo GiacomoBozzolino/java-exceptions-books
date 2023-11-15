@@ -1,7 +1,7 @@
 Libro 1
 
-Titolo: t
+Titolo: lo hobbit
 Numero pagine: 10
-Autore: ttt
-Editore: ttttt
+Autore: tolkien
+Editore: dddd
 -----------------------------

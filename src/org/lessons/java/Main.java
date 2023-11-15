@@ -1,8 +1,13 @@
 package org.lessons.java;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+	static final File myFile = new File("./my-file.txt");
 
     public static void main(String[] args) {
 
@@ -41,7 +46,42 @@ public class Main {
 
         in.close();
 
-       
+       // scrittura su file
+        
+FileWriter myWriter = null;
+		
+		try {
+			
+			myWriter = new FileWriter(myFile);
+			
+			for (int i = 0; i < books.length; i++) {
+				
+				Libro b = books[i];
+				
+				myWriter.write("Libro " + (i+1) + "\n"
+						+ "\nTitolo: " + b.getTitolo() + "\n"
+						+ "Numero pagine: " + b.getNumeroPagine() + "\n"
+						+ "Autore: " + b.getAutore() + "\n"
+						+ "Editore: " + b.getEditore()
+						+ "\n-----------------------------\n"
+						);
+			}
+			
+		} catch (IOException e) {
+			
+			System.out.println("Error writing file: " + e.getMessage());
+			
+		} finally {
+			
+			if (myWriter != null) {
+				try {
+					myWriter.close();
+				} catch (IOException e) { }
+			}
+		}
+		
+		
+        
     }
 }
 
